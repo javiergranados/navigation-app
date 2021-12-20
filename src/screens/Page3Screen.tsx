@@ -1,18 +1,22 @@
 import React from 'react';
-import { Text, View, StyleSheet } from 'react-native';
+import { appStyles } from '../theme/appTheme';
+import { Text, View, StyleSheet, Button } from 'react-native';
+import { StackScreenProps } from '@react-navigation/stack';
+import { RootStackParamList } from '../navigations/StackNavigation';
 
-const Page3Screen = () => {
+interface Page3ScreenProps extends StackScreenProps<RootStackParamList, 'Page3Screen'> {}
+
+const Page3Screen = ({ navigation }: Page3ScreenProps) => {
   return (
-    <View style={styles.container}>
+    <View style={appStyles.globalMargin}>
       <Text style={styles.title}>Page 3 screen</Text>
+      <Button title="Go back" onPress={() => navigation.goBack()} />
+      <Button title="Go to Home" onPress={() => navigation.popToTop()} />
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
   title: {
     fontSize: 20,
   },

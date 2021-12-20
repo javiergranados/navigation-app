@@ -1,18 +1,21 @@
 import React from 'react';
-import { Text, View, StyleSheet } from 'react-native';
+import { appStyles } from '../theme/appTheme';
+import { StackScreenProps } from '@react-navigation/stack';
+import { RootStackParamList } from '../navigations/StackNavigation';
+import { Text, View, StyleSheet, Button } from 'react-native';
 
-const Page1Screen = () => {
+interface Page1ScreenProps extends StackScreenProps<RootStackParamList, 'Page1Screen'> {}
+
+const Page1Screen = ({ navigation }: Page1ScreenProps) => {
   return (
-    <View style={styles.container}>
+    <View style={appStyles.globalMargin}>
       <Text style={styles.title}>Page 1 screen</Text>
+      <Button title="Go to Screen 2" onPress={() => navigation.navigate('Page2Screen')} />
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
   title: {
     fontSize: 20,
   },
