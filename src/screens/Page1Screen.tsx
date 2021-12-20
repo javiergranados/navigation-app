@@ -1,10 +1,10 @@
 import React from 'react';
 import { Text, View, StyleSheet } from 'react-native';
 
-const NavigationScreen = () => {
+const Page1Screen = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Navigation screen</Text>
+      <Text style={styles.title}>Page 1 screen</Text>
     </View>
   );
 };
@@ -18,4 +18,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default NavigationScreen;
+export default Page1Screen;
