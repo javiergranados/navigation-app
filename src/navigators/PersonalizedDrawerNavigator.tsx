@@ -1,11 +1,11 @@
 import React from 'react';
 import { Image, Platform, StyleSheet, Text, TouchableOpacity, useWindowDimensions, View } from 'react-native';
 import { createDrawerNavigator, DrawerContentComponentProps, DrawerContentScrollView } from '@react-navigation/drawer';
-import StackNavigator from './StackNavigator';
+import BottomTabNavigator from './BottomTabNavigator';
 import SettingsScreen from '../screens/SettingsScreen';
 
 export type PersonalizedDrawerParamList = {
-  StackNavigator: undefined;
+  BottomTabNavigator: undefined;
   SettingsScreen: undefined;
 };
 
@@ -25,7 +25,7 @@ const DrawerContent = ({ navigation }: DrawerContentComponentProps) => {
       </View>
       {/* Menu options */}
       <View style={styles.menuContainer}>
-        <TouchableOpacity style={styles.menuButton} onPress={() => navigation.navigate('StackNavigator')}>
+        <TouchableOpacity style={styles.menuButton} onPress={() => navigation.navigate('BottomTabNavigator')}>
           <Text style={styles.menuText}>Navegation</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.menuButton} onPress={() => navigation.navigate('SettingsScreen')}>
@@ -47,7 +47,7 @@ const PersonalizedDrawerNavigator = () => {
       }}
       drawerContent={(props) => <DrawerContent {...props} />}
     >
-      <Drawer.Screen name="StackNavigator" component={StackNavigator} />
+      <Drawer.Screen name="BottomTabNavigator" component={BottomTabNavigator} />
       <Drawer.Screen name="SettingsScreen" options={{ headerShown: false }} component={SettingsScreen} />
     </Drawer.Navigator>
   );
