@@ -1,9 +1,8 @@
 import React from 'react';
 import { appStyles } from '../theme/appTheme';
-import { Text, View, Button, StyleSheet } from 'react-native';
+import { Text, View, Button, StyleSheet, TouchableOpacity } from 'react-native';
 import { StackScreenProps } from '@react-navigation/stack';
 import { RootStackParamList } from '../navigators/StackNavigator';
-import { TouchableOpacity } from 'react-native-gesture-handler';
 
 interface Page1ScreenProps extends StackScreenProps<RootStackParamList, 'Page1Screen'> {}
 
