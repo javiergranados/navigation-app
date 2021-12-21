@@ -25,7 +25,7 @@ const DrawerContent = ({ navigation }: DrawerContentComponentProps) => {
       </View>
       {/* Menu options */}
       <View style={styles.menuContainer}>
-        <TouchableOpacity style={styles.menuButton} onPress={() => navigation.navigate('BottomTabNavigator')}>
+        <TouchableOpacity style={styles.menuButton} onPress={() => navigation.navigate('StackNavigator')}>
           <Text style={styles.menuText}>Navegation</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.menuButton} onPress={() => navigation.navigate('SettingsScreen')}>
@@ -47,7 +47,7 @@ const PersonalizedDrawerNavigator = () => {
       }}
       drawerContent={(props) => <DrawerContent {...props} />}
     >
-      <Drawer.Screen name="BottomTabNavigator" component={BottomTabNavigator} />
+      <Drawer.Screen name="BottomTabNavigator" options={{ headerShown: false }} component={BottomTabNavigator} />
       <Drawer.Screen name="SettingsScreen" options={{ headerShown: false }} component={SettingsScreen} />
     </Drawer.Navigator>
   );
