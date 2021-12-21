@@ -1,21 +1,16 @@
 import React from 'react';
-import { Text, View, StyleSheet } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { Text, View } from 'react-native';
+import { appStyles } from '../theme/appTheme';
 
 const SettingsScreen = () => {
+  const insets = useSafeAreaInsets();
+
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Settings screen</Text>
+    <View style={{ ...appStyles.globalMargin, marginTop: insets.top + 20 }}>
+      <Text style={appStyles.title}>Settings screen</Text>
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-  title: {
-    fontSize: 20,
-  },
-});
 
 export default SettingsScreen;

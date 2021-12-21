@@ -48,7 +48,7 @@ const PersonalizedDrawerNavigator = () => {
       drawerContent={(props) => <DrawerContent {...props} />}
     >
       <Drawer.Screen name="StackNavigator" component={StackNavigator} />
-      <Drawer.Screen name="SettingsScreen" component={SettingsScreen} />
+      <Drawer.Screen name="SettingsScreen" options={{ headerShown: false }} component={SettingsScreen} />
     </Drawer.Navigator>
   );
 };
