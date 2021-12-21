@@ -2,7 +2,7 @@ import React from 'react';
 import { appStyles } from '../theme/appTheme';
 import { Text, View, Button } from 'react-native';
 import { StackScreenProps } from '@react-navigation/stack';
-import { RootStackParamList } from '../navigations/StackNavigation';
+import { RootStackParamList } from '../navigators/StackNavigator';
 
 interface Page3ScreenProps extends StackScreenProps<RootStackParamList, 'Page3Screen'> {}
 

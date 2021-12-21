@@ -3,7 +3,7 @@ import { appStyles } from '../theme/appTheme';
 import { useNavigation } from '@react-navigation/native';
 import { Text, View, Button } from 'react-native';
 import { StackNavigationProp } from '@react-navigation/stack';
-import { RootStackParamList } from '../navigations/StackNavigation';
+import { RootStackParamList } from '../navigators/StackNavigator';
 
 type Page2ScreenProps = StackNavigationProp<RootStackParamList, 'Page2Screen'>;
 

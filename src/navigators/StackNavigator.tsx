@@ -14,7 +14,7 @@ export type RootStackParamList = {
 
 const RootStack = createStackNavigator<RootStackParamList>();
 
-const StackNavigation = () => {
+const StackNavigator = () => {
   return (
     <RootStack.Navigator
       screenOptions={{
@@ -35,4 +35,4 @@ const StackNavigation = () => {
   );
 };
 
-export default StackNavigation;
+export default StackNavigator;

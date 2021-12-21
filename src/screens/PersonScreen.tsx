@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { appStyles } from '../theme/appTheme';
 import { Text, View } from 'react-native';
 import { StackScreenProps } from '@react-navigation/stack';
-import { RootStackParamList } from '../navigations/StackNavigation';
+import { RootStackParamList } from '../navigators/StackNavigator';
 
 interface PersonScreenProps extends StackScreenProps<RootStackParamList, 'PersonScreen'> {}
 
