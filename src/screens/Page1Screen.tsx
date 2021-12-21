@@ -11,7 +11,7 @@ const Page1Screen = ({ navigation }: Page1ScreenProps) => {
     <View style={appStyles.globalMargin}>
       <Text style={appStyles.title}>Page 1 screen</Text>
       <Button title="Go to Screen 2" onPress={() => navigation.navigate('Page2Screen')} />
-      <Text>Navigate with arguments</Text>
+      <Text style={{ fontSize: 18, marginTop: 20, marginLeft: 5 }}>Navigate with arguments</Text>
       <View style={{ flexDirection: 'row', justifyContent: 'center' }}>
         <TouchableOpacity
           style={styles.button}
