@@ -1,21 +1,21 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { colors } from '../theme/appTheme';
 import Tab1Screen from '../screens/Tab1Screen';
 import Tab2Screen from '../screens/Tab2Screen';
 import StackNavigator from './StackNavigator';
-import { colors } from '../theme/appTheme';
 
-export type BottomTabParamList = {
+export type TabsParamList = {
   Tab1Screen: undefined;
   Tab2Screen: undefined;
   StackNavigator: undefined;
 };
 
-const BottomTab = createBottomTabNavigator<BottomTabParamList>();
+const Tab = createBottomTabNavigator<TabsParamList>();
 
-const BottomTabNavigator = () => {
+const TabsNavigator = () => {
   return (
-    <BottomTab.Navigator
+    <Tab.Navigator
       sceneContainerStyle={{
         backgroundColor: 'white',
       }}
@@ -31,15 +31,11 @@ const BottomTabNavigator = () => {
         },
       }}
     >
-      <BottomTab.Screen name="Tab1Screen" options={{ title: 'Tab1', headerShown: false }} component={Tab1Screen} />
-      <BottomTab.Screen name="Tab2Screen" options={{ title: 'Tab2', headerShown: false }} component={Tab2Screen} />
-      <BottomTab.Screen
-        name="StackNavigator"
-        options={{ title: 'Stack', headerShown: false }}
-        component={StackNavigator}
-      />
-    </BottomTab.Navigator>
+      <Tab.Screen name="Tab1Screen" options={{ title: 'Tab1', headerShown: false }} component={Tab1Screen} />
+      <Tab.Screen name="Tab2Screen" options={{ title: 'Tab2', headerShown: false }} component={Tab2Screen} />
+      <Tab.Screen name="StackNavigator" options={{ title: 'Stack', headerShown: false }} component={StackNavigator} />
+    </Tab.Navigator>
   );
 };
 
-export default BottomTabNavigator;
+export default TabsNavigator;

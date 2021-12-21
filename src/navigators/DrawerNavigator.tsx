@@ -1,11 +1,11 @@
 import React from 'react';
 import { Image, Platform, StyleSheet, Text, TouchableOpacity, useWindowDimensions, View } from 'react-native';
 import { createDrawerNavigator, DrawerContentComponentProps, DrawerContentScrollView } from '@react-navigation/drawer';
-import BottomTabNavigator from './BottomTabNavigator';
+import TabsNavigator from './TabsNavigator';
 import SettingsScreen from '../screens/SettingsScreen';
 
 export type DrawerParamList = {
-  BottomTabNavigator: undefined;
+  TabsNavigator: undefined;
   SettingsScreen: undefined;
 };
 
@@ -22,7 +22,7 @@ const DrawerNavigator = () => {
       }}
       drawerContent={(props) => <DrawerContent {...props} />}
     >
-      <Drawer.Screen name="BottomTabNavigator" options={{ headerShown: false }} component={BottomTabNavigator} />
+      <Drawer.Screen name="TabsNavigator" options={{ headerShown: false }} component={TabsNavigator} />
       <Drawer.Screen name="SettingsScreen" options={{ headerShown: false }} component={SettingsScreen} />
     </Drawer.Navigator>
   );
