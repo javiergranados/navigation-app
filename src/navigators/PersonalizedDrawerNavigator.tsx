@@ -1,6 +1,5 @@
 import React from 'react';
-import { appStyles } from '../theme/appTheme';
-import { Image, useWindowDimensions, View } from 'react-native';
+import { Image, Platform, StyleSheet, Text, TouchableOpacity, useWindowDimensions, View } from 'react-native';
 import { createDrawerNavigator, DrawerContentComponentProps, DrawerContentScrollView } from '@react-navigation/drawer';
 import StackNavigator from './StackNavigator';
 import SettingsScreen from '../screens/SettingsScreen';
@@ -12,16 +11,26 @@ export type PersonalizedDrawerParamList = {
 
 const Drawer = createDrawerNavigator<PersonalizedDrawerParamList>();
 
-const DrawerContent = (props: DrawerContentComponentProps) => {
+const DrawerContent = ({ navigation }: DrawerContentComponentProps) => {
   return (
     <DrawerContentScrollView>
-      <View style={appStyles.avatarContainer}>
+      {/* Avatar */}
+      <View style={styles.avatarContainer}>
         <Image
           source={{
             uri: 'https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png',
           }}
-          style={appStyles.avatar}
+          style={styles.avatar}
         />
+      </View>
+      {/* Menu options */}
+      <View style={styles.menuContainer}>
+        <TouchableOpacity style={styles.menuButton} onPress={() => navigation.navigate('StackNavigator')}>
+          <Text style={styles.menuText}>Navegation</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.menuButton} onPress={() => navigation.navigate('SettingsScreen')}>
+          <Text style={styles.menuText}>Settings</Text>
+        </TouchableOpacity>
       </View>
     </DrawerContentScrollView>
   );
@@ -43,5 +52,27 @@ const PersonalizedDrawerNavigator = () => {
     </Drawer.Navigator>
   );
 };
+
+const styles = StyleSheet.create({
+  avatarContainer: {
+    alignItems: 'center',
+    marginTop: Platform.OS === 'ios' ? 5 : 20,
+  },
+  avatar: {
+    width: 100,
+    height: 100,
+    borderRadius: 100,
+  },
+  menuContainer: {
+    marginVertical: 30,
+    marginHorizontal: 50,
+  },
+  menuButton: {
+    marginVertical: 10,
+  },
+  menuText: {
+    fontSize: 20,
+  },
+});
 
 export default PersonalizedDrawerNavigator;
