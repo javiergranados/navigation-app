@@ -1,15 +1,15 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 // import StackNavigator from './src/navigators/StackNavigator';
-// import DrawerNavigator from './src/navigators/DrawerNavigator';
-import PersonalizedDrawerNavigator from './src/navigators/PersonalizedDrawerNavigator';
+// import OldDrawerNavigator from './src/navigators/OldDrawerNavigator';
+import DrawerNavigator from './src/navigators/DrawerNavigator';
 
 const App = () => {
   return (
     <NavigationContainer>
       {/* <StackNavigator /> */}
-      {/* <DrawerNavigator /> */}
-      <PersonalizedDrawerNavigator />
+      {/* <OldDrawerNavigator /> */}
+      <DrawerNavigator />
     </NavigationContainer>
   );
 };
