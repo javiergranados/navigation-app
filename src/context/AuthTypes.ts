@@ -1,12 +1,15 @@
 export interface AuthState {
   isLoggedIn: boolean;
   username?: string;
-  favoriteIcon?: string;
+  favIcon?: string;
 }
 
 export interface AuthContextProps {
   authState: AuthState;
   signIn: () => void;
+  changeFavIcon: (icon: string) => void;
 }
 
-export type AuthAction = {type: "SIGN_IN"};
+export type AuthActions =
+  | {type: "SIGN_IN"}
+  | {type: "CHANGE_FAV_ICON", payload: string};

@@ -13,11 +13,14 @@ export const AuthProvider = ({ children }: any) => {
 
   const signIn = () => dispatch({ type: 'SIGN_IN' });
 
+  const changeFavIcon = (icon: string) => dispatch({ type: 'CHANGE_FAV_ICON', payload: icon });
+
   return (
     <AuthContext.Provider
       value={{
         authState,
         signIn,
+        changeFavIcon,
       }}
     >
       {children}
