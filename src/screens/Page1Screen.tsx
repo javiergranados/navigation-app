@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
-import { appStyles } from '../theme/appTheme';
+import Icon from 'react-native-vector-icons/Ionicons';
+import { appStyles, colors } from '../theme/appTheme';
 import { Text, View, Button, StyleSheet, TouchableOpacity } from 'react-native';
 import { DrawerScreenProps } from '@react-navigation/drawer';
 import { RootStackParamList } from '../navigators/StackNavigator';
@@ -9,7 +10,11 @@ interface Page1ScreenProps extends DrawerScreenProps<RootStackParamList, 'Page1S
 const Page1Screen = ({ navigation }: Page1ScreenProps) => {
   useEffect(() => {
     navigation.setOptions({
-      headerLeft: () => <Button title="Menu" onPress={() => navigation.toggleDrawer()} />,
+      headerLeft: () => (
+        <TouchableOpacity style={styles.menu} onPress={() => navigation.toggleDrawer()}>
+          <Icon name="menu-outline" size={35} color={colors.primary} />
+        </TouchableOpacity>
+      ),
     });
   }, []);
 
@@ -23,12 +28,14 @@ const Page1Screen = ({ navigation }: Page1ScreenProps) => {
           style={styles.button}
           onPress={() => navigation.navigate('PersonScreen', { id: 1, name: 'Peter' })}
         >
+          <Icon name="person-outline" size={25} color="white" />
           <Text style={styles.buttonText}>Peter</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.button}
           onPress={() => navigation.navigate('PersonScreen', { id: 2, name: 'Maria' })}
         >
+          <Icon name="person-outline" size={25} color="white" />
           <Text style={styles.buttonText}>Maria</Text>
         </TouchableOpacity>
       </View>
@@ -37,6 +44,9 @@ const Page1Screen = ({ navigation }: Page1ScreenProps) => {
 };
 
 const styles = StyleSheet.create({
+  menu: {
+    marginLeft: 10,
+  },
   button: {
     width: 100,
     height: 50,
@@ -46,8 +56,10 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     marginRight: 10,
     marginTop: 15,
+    flexDirection: 'row',
   },
   buttonText: {
+    marginLeft: 5,
     color: 'white',
     fontSize: 18,
     fontWeight: 'bold',

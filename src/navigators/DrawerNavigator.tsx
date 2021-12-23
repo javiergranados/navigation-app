@@ -1,4 +1,5 @@
 import React from 'react';
+import Icon from 'react-native-vector-icons/Ionicons';
 import { Image, Platform, StyleSheet, Text, TouchableOpacity, useWindowDimensions, View } from 'react-native';
 import { createDrawerNavigator, DrawerContentComponentProps, DrawerContentScrollView } from '@react-navigation/drawer';
 import TabsNavigator from './TabsNavigator';
@@ -43,9 +44,11 @@ const DrawerContent = ({ navigation }: DrawerContentComponentProps) => {
       {/* Menu options */}
       <View style={styles.menuContainer}>
         <TouchableOpacity style={styles.menuButton} onPress={() => navigation.navigate('StackNavigator')}>
+          <Icon name="compass-outline" size={30} />
           <Text style={styles.menuText}>Navegation</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.menuButton} onPress={() => navigation.navigate('SettingsScreen')}>
+          <Icon name="settings-outline" size={30} />
           <Text style={styles.menuText}>Settings</Text>
         </TouchableOpacity>
       </View>
@@ -69,9 +72,12 @@ const styles = StyleSheet.create({
   },
   menuButton: {
     marginVertical: 10,
+    flexDirection: 'row',
+    alignItems: 'center',
   },
   menuText: {
     fontSize: 20,
+    marginLeft: 5,
   },
 });
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import Icon from 'react-native-vector-icons/Ionicons';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import ChatScreen from '../screens/ChatScreen';
@@ -22,8 +23,9 @@ const TopTabNavigator = () => {
       style={{ paddingTop: insets.top }}
       sceneContainerStyle={{ backgroundColor: 'white' }}
       screenOptions={{
+        tabBarActiveTintColor: colors.primary,
         tabBarPressColor: colors.primary,
-        tabBarShowIcon: false,
+        tabBarShowIcon: true,
         tabBarIndicatorStyle: {
           backgroundColor: colors.primary,
         },
@@ -33,9 +35,30 @@ const TopTabNavigator = () => {
         },
       }}
     >
-      <Tab.Screen name="ChatScreen" options={{ title: 'Chat' }} component={ChatScreen} />
-      <Tab.Screen name="ContactsScreen" options={{ title: 'Contacts' }} component={ContactsScreen} />
-      <Tab.Screen name="AlbumsScreen" options={{ title: 'Albums' }} component={AlbumsScreen} />
+      <Tab.Screen
+        name="ChatScreen"
+        options={{
+          title: 'Chat',
+          tabBarIcon: ({ color }) => <Icon name="chatbox-ellipses-outline" size={20} color={color} />,
+        }}
+        component={ChatScreen}
+      />
+      <Tab.Screen
+        name="ContactsScreen"
+        options={{
+          title: 'Contacts',
+          tabBarIcon: ({ color }) => <Icon name="people-outline" size={20} color={color} />,
+        }}
+        component={ContactsScreen}
+      />
+      <Tab.Screen
+        name="AlbumsScreen"
+        options={{
+          title: 'Albums',
+          tabBarIcon: ({ color }) => <Icon name="albums-outline" size={20} color={color} />,
+        }}
+        component={AlbumsScreen}
+      />
     </Tab.Navigator>
   );
 };
