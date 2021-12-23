@@ -20,6 +20,12 @@ const authReducer = (state: AuthState, action: AuthActions): AuthState => {
         ...state,
         favIcon: action.payload,
       };
+    case 'CHANGE_USERNAME':
+      return {
+        ...state,
+        isLoggedIn: true,
+        username: action.payload,
+      };
     default:
       return state;
   }

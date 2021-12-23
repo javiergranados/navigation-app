@@ -17,6 +17,8 @@ export const AuthProvider = ({ children }: any) => {
 
   const changeFavIcon = (icon: string) => dispatch({ type: 'CHANGE_FAV_ICON', payload: icon });
 
+  const changeUsername = (username: string) => dispatch({ type: 'CHANGE_USERNAME', payload: username });
+
   return (
     <AuthContext.Provider
       value={{
@@ -24,6 +26,7 @@ export const AuthProvider = ({ children }: any) => {
         signIn,
         logOut,
         changeFavIcon,
+        changeUsername,
       }}
     >
       {children}
