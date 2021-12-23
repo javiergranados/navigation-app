@@ -13,6 +13,8 @@ export const AuthProvider = ({ children }: any) => {
 
   const signIn = () => dispatch({ type: 'SIGN_IN' });
 
+  const logOut = () => dispatch({ type: 'LOG_OUT' });
+
   const changeFavIcon = (icon: string) => dispatch({ type: 'CHANGE_FAV_ICON', payload: icon });
 
   return (
@@ -20,6 +22,7 @@ export const AuthProvider = ({ children }: any) => {
       value={{
         authState,
         signIn,
+        logOut,
         changeFavIcon,
       }}
     >

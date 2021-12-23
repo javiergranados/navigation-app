@@ -8,6 +8,13 @@ const authReducer = (state: AuthState, action: AuthActions): AuthState => {
         isLoggedIn: true,
         username: 'no-username-yet',
       };
+    case 'LOG_OUT':
+      return {
+        ...state,
+        isLoggedIn: false,
+        username: undefined,
+        favIcon: undefined,
+      };
     case 'CHANGE_FAV_ICON':
       return {
         ...state,
